@@ -41,6 +41,8 @@ class StaffController extends Controller
     {
         $author = Staff::findOrFail($id);
         $author->update($request->all());
+        var_dump($id);
+        var_dump($request->all());
     
         return response()->json($author, 200);
     }

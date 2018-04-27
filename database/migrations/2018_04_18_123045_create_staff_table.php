@@ -15,7 +15,7 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('staffId');
-            $table->tinyInteger('userId')->default(0);
+            $table->tinyInteger('userId')->default(0)->unique();
             $table->tinyInteger('parentUserId');
             $table->string('first_name');
             $table->string('last_name');

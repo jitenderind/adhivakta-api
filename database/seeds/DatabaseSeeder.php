@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 class ForumTableSeeder extends Seeder
 {
     public function run(){
-        App\Models\Forum::create(['forum'=>'Supreme Court','abbr'=>'SC','base_url'=>'http://supremecourtofindia.nic.in/']);
+        App\Models\Forum::create(['forum'=>'Supreme Court','abbr'=>'SC','base_url'=>'http://www.supremecourtofindia.nic.in/']);
         App\Models\Forum::create(['forum'=>'Delhi High Court','abbr'=>'DL HC','base_url'=>'http://delhihighcourt.nic.in/']);
         App\Models\Forum::create(['forum'=>'Punjab & Haryana High Court','abbr'=>'P&H HC','base_url'=>'https://phhc.gov.in/']);
     }
@@ -31,12 +31,12 @@ class ForumTableSeeder extends Seeder
 class APIHelperTableSeeder extends Seeder
 {
     public function run(){
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_details','url'=>'http://supremecourtofindia.nic.in/php/case_status/case_status_process.php','params'=>'ct:case_type;cn:case_number;cy:case_year']);
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_listing','url'=>'http://supremecourtofindia.nic.in/php/case_status/get_listings.php','params'=>'diaryno:diary no without character of gap']);
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_orders','url'=>'http://supremecourtofindia.nic.in/php/case_status/get_judgement_order.php','params'=>'diaryno:diary no without character of gap']);
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_documents','url'=>'http://supremecourtofindia.nic.in/php/case_status/get_office_report.php','params'=>'diaryno:diary no without character of gap']);
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'causelist_fetch','url'=>'http://supremecourtofindia.nic.in/php/getCLCNData.php','params'=>'courtno:court no[number or null];msb:type[0=both,1=Main,2=Supplementry];stagecn:stage[F=regular,M=Miscellaneous];from_date_cn:date[d-m-Y]']);
-        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'display_board','url'=>'http://supremecourtofindia.nic.in/php/display/get_board.php','params'=>'']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_details','url'=>'http://www.supremecourtofindia.nic.in/php/case_status/case_status_process.php','params'=>'ct:case_type;cn:case_number;cy:case_year']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_listing','url'=>'http://www.supremecourtofindia.nic.in/php/case_status/get_listings.php','params'=>'diaryno:diary no without character of gap']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_orders','url'=>'http://www.supremecourtofindia.nic.in/php/case_status/get_judgement_order.php','params'=>'diaryno:diary no without character of gap']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'case_documents','url'=>'http://www.supremecourtofindia.nic.in/php/case_status/get_office_report.php','params'=>'diaryno:diary no without character of gap']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'causelist_fetch','url'=>'http://www.supremecourtofindia.nic.in/php/getCLCNData.php','params'=>'courtno:court no[number or null];msb:type[0=both,1=Main,2=Supplementry];stagecn:stage[F=regular,M=Miscellaneous];from_date_cn:date[d-m-Y]']);
+        App\Models\APIHelper::create(['forumId'=>'1','helper_type'=>'display_board','url'=>'http://www.supremecourtofindia.nic.in/php/display/get_board.php','params'=>'']);
     }
 }
 

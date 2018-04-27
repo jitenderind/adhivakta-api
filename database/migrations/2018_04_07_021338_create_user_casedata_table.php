@@ -17,8 +17,9 @@ class CreateUserCasedataTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('userCaseDataId');
             $table->bigInteger('userCaseId');
+            $table->string('title',50);
             $table->string('data_type',25);
-            $table->text('data_value');
+            $table->string('data_value',255);
             $table->timestamps();
             //$table->foreign('userCaseId')->references('userCaseId')->on('user_cases');
         });

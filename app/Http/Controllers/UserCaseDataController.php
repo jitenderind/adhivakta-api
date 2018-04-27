@@ -37,8 +37,12 @@ class UserCaseDataController extends Controller
     
     public function create(Request $request)
     {
-         $request->all();
-       $author = UserCaseData::create($request->all());
+         
+        $data['userCaseId']=$request->userCaseId;
+        $data['data_type']=$request->data_type;
+        $data['title']=!empty($request->title)?$request->title:'';
+        $data['data_value']=!empty($request->data_value)?$request->data_value:$request->file_name;
+       $author = UserCaseData::create($data);
     
         return response()->json($author, 201);
     }
@@ -46,7 +50,8 @@ class UserCaseDataController extends Controller
     public function update($id, Request $request)
     {
         $author = UserCaseData::findOrFail($id);
-        $author->update($request->all());
+        $data[$request->name]=$request->value;
+        $author->update($data);
     
         return response()->json($author, 200);
     }

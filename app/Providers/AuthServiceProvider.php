@@ -37,7 +37,7 @@ class AuthServiceProvider extends ServiceProvider
             */
             $header = $request->header('Authorization');
             $header= str_replace("Bearer ", "", $header);
-            //if(password_verify('aditiaryan',$header)){
+           // if(password_verify('aditiaryan',$header)){
                 return new User();
             //}
             //return null;

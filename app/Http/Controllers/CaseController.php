@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Queue;
 use \App\Jobs\CaseDoc;
 use \App\Jobs\CaseListing;
 use \App\Jobs\CaseOrders;
-//use \App\Jobs\UserForum;
+use \App\Jobs\UserForums;
 use App\Models\UserCases;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -83,14 +83,14 @@ class CaseController extends Controller
         //add case office documents
         Queue::push(new CaseDoc($case_insert->caseId,array($data['diaryNo']),$request->forumId));
         
-        Queue::push(new UserForum($request->userId,$request->forumId));
+        Queue::push(new UserForums($request->userId,$request->forumId));
         
         //add case listings
         Queue::push(new CaseListing($case_insert->caseId,array($data['diaryNo']),$request->forumId,$request->caseNo,$request->caseYear));
         
         //run command 
         $case = \DB::table('user_cases')->leftjoin('cases','cases.caseId','=','user_cases.caseId')->where('user_cases.caseId',$case_insert->caseId)->first();
-        return response()->json($case, 201);
+        return response()->json($case, 200);
     }
     public function caseDetail($id){
         $case=\DB::table('user_cases')
@@ -157,6 +157,10 @@ class CaseController extends Controller
     }
     
     public function test(){
+        
+        $data=\App\Courts\Courts::getDisplayBoard(array(array('forumId'=>1)));
+        var_dump($data);
+        die();
         $userId=1;
         $forums = \App\Models\UserForum::select('forumId')->where('userId',$userId)->get()->toArray();
         $forums = array_map(function ($value) {

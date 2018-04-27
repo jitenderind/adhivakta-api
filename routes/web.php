@@ -431,7 +431,8 @@ $router->group([
         $router->put('user-case/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'UserCasesController@update'
         ]);
@@ -554,7 +555,8 @@ $router->group([
         $router->put('user-case-data/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'UserCaseDataController@update'
         ]);
@@ -652,7 +654,8 @@ $router->group([
         $router->put('appeal-alert/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'AppealAlertController@update'
         ]);
@@ -767,7 +770,8 @@ $router->group([
         $router->put('task/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'TaskController@update'
         ]);
@@ -865,7 +869,8 @@ $router->group([
         $router->put('edit-staff/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'StaffController@update'
         ]);
@@ -963,7 +968,8 @@ $router->group([
         $router->put('invoice/{id}', [
             'middleware' => [
                 'auth',
-                'cors'
+                'cors',
+                'put'
             ],
             'uses' => 'InvoiceController@update'
         ]);

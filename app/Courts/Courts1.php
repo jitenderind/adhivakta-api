@@ -338,6 +338,8 @@ class Courts1 extends Model
         foreach ($params as $k => $pm) {
             $vars[$pm] = $p[$k];
         }
+        //var_dump($helper->url);
+        //var_dump($vars);
         $ch = curl_init();
         // set URL and other appropriate options
         curl_setopt($ch, CURLOPT_URL, $helper->url);

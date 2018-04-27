@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-class UserForum extends Job
+class UserForums extends Job
 {
     /**
      * Create a new job instance.
